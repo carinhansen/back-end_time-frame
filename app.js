@@ -4,11 +4,11 @@ const app = express();
 const fetch = require("node-fetch");
 const data = require("./MOCK_DATA.json");
 
-const origin = "Rotterdam";
-const destination = "Amsterdam";
-
 app.get('/packages/:packageid', (req, res) => {
   let departureTime;
+  let origin;
+  let destination;
+
   console.log(req.params);
 
   for(var i = 0; i < data.length; i++)
@@ -16,15 +16,27 @@ app.get('/packages/:packageid', (req, res) => {
     if(data[i].packageid == req.params.packageid)
     {
       departureTime = data[i].departure_time;
+      origin = data[i].origin;
+      destination = data[i].destination;
 
       return fetch("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=" + origin + "&destinations=" + destination + "mode=driving&departure_time=" + departureTime + "&key=" + process.env.GOOGLE_KEY).then((response) => {
         return response.json();
 
       })
         .then((response) => {
+
+          let durationDelivery = response.rows[0].elements[0].duration_in_traffic.value;
+          let preciseArrival = departureTime + durationDelivery;
+
+          let minArrival = preciseArrival - 900;
+          let maxArrival = preciseArrival + 900;
+
           let result = {
             google: response,
-            packageData: data[i]
+            packageData: data[i],
+            preciseArrival: preciseArrival,
+            minArrival: minArrival,
+            maxArrival: maxArrival,
           }
           return res.json(result);
         });
@@ -35,6 +47,6 @@ app.get('/packages/:packageid', (req, res) => {
   }
 });
 
-app.listen(8000, () => console.log('Example app listening on port 3000!'))
+app.listen(8000, () => console.log('Example app listening on port 8000!'))
 
 
