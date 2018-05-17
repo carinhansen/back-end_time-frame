@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- node
+addons:
+  ssh_known_hosts: 
+    - bitesized.xyz
+before_install:
+- openssl aes-256-cbc -K $encrypted_cf91a429eecb_key -iv $encrypted_cf91a429eecb_iv
+  -in .travis/id_rsa.enc -out .travis/id_rsa -d
+before_script:
+- chmod +x ./ci-scripts/deploy.sh
+script: "./ci-scripts/deploy.sh"
