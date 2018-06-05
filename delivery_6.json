@@ -1,0 +1,237 @@
+[
+  {
+    "package": {
+      "id": 1,
+      "delivery_delay": 33,
+      "weight": 5,
+      "fragile": true,
+      "dimensions": {
+        "height": 194,
+        "width": 34,
+        "depth": 51
+      },
+      "customer": {
+        "id": 85,
+        "name": {
+          "first": "Ellen",
+          "insertion": "",
+          "last": "Vis"
+        },
+        "birthday": 27,
+        "gender": "Woman",
+        "address": {
+          "street": "Marnixstraat",
+          "street_number": 88,
+          "postal_code": "3034LZ",
+          "city": "Rotterdam",
+          "country": "Netherlands"
+        }
+      }
+    },
+    "address": "Marnixstraat 88 3034LZ",
+    "durations": {
+      "distance": {
+        "text": "2.2 km",
+        "value": 2233
+      },
+      "duration": {
+        "text": "9 mins",
+        "value": 560
+      },
+      "duration_in_traffic": {
+        "text": "9 mins",
+        "value": 532
+      },
+      "status": "OK"
+    },
+    "departure_time": 1526803200
+  },
+  {
+    "package": {
+      "id": 2,
+      "delivery_delay": 18,
+      "weight": 12,
+      "fragile": false,
+      "dimensions": {
+        "height": 191,
+        "width": 34,
+        "depth": 9
+      },
+      "customer": {
+        "id": 99,
+        "name": {
+          "first": "Harry",
+          "insertion": "",
+          "last": "Hand"
+        },
+        "birthday": 54,
+        "gender": "Man",
+        "address": {
+          "street": "Crooswijksesdwarstraat",
+          "street_number": 280,
+          "postal_code": "3034AR",
+          "city": "Rotterdam",
+          "country": "Netherlands"
+        }
+      }
+    },
+    "address": "Crooswijksesdwarstraat 280 3034AR",
+    "durations": {
+      "distance": {
+        "text": "0.2 km",
+        "value": 170
+      },
+      "duration": {
+        "text": "1 min",
+        "value": 41
+      },
+      "duration_in_traffic": {
+        "text": "1 min",
+        "value": 41
+      },
+      "status": "OK"
+    },
+    "departure_time": 1526803200
+  },
+  {
+    "package": {
+      "id": 3,
+      "delivery_delay": 141,
+      "weight": 30,
+      "fragile": true,
+      "dimensions": {
+        "height": 123,
+        "width": 1,
+        "depth": 25
+      },
+      "customer": {
+        "id": 21,
+        "name": {
+          "first": "Shane",
+          "insertion": "van",
+          "last": "Rood"
+        },
+        "birthday": 9,
+        "gender": "Man",
+        "address": {
+          "street": "Frederikstraat",
+          "street_number": 145,
+          "postal_code": "3034LH",
+          "city": "Rotterdam",
+          "country": "Netherlands"
+        }
+      }
+    },
+    "address": "Frederikstraat 145 3034LH",
+    "durations": {
+      "distance": {
+        "text": "0.2 km",
+        "value": 191
+      },
+      "duration": {
+        "text": "1 min",
+        "value": 57
+      },
+      "duration_in_traffic": {
+        "text": "1 min",
+        "value": 56
+      },
+      "status": "OK"
+    },
+    "departure_time": 1526803200
+  },
+  {
+    "package": {
+      "id": 4,
+      "delivery_delay": 521,
+      "weight": 65,
+      "fragile": false,
+      "dimensions": {
+        "height": 223,
+        "width": 48,
+        "depth": 8
+      },
+      "customer": {
+        "id": 29,
+        "name": {
+          "first": "Vivien",
+          "insertion": "",
+          "last": "Dapper"
+        },
+        "birthday": 42,
+        "gender": "Woman",
+        "address": {
+          "street": "Crooswijksesingel",
+          "street_number": 50,
+          "postal_code": "3034CJ",
+          "city": "Rotterdam",
+          "country": "Netherlands"
+        }
+      }
+    },
+    "address": "Crooswijksesingel 50 3034CJ",
+    "durations": {
+      "distance": {
+        "text": "0.8 km",
+        "value": 850
+      },
+      "duration": {
+        "text": "4 mins",
+        "value": 233
+      },
+      "duration_in_traffic": {
+        "text": "4 mins",
+        "value": 244
+      },
+      "status": "OK"
+    },
+    "departure_time": 1526803200
+  },
+  {
+    "package": {
+      "id": 5,
+      "delivery_delay": 113,
+      "weight": 26,
+      "fragile": true,
+      "dimensions": {
+        "height": 126,
+        "width": 11,
+        "depth": 29
+      },
+      "customer": {
+        "id": 54,
+        "name": {
+          "first": "Vincent",
+          "insertion": "het",
+          "last": "Hendriks"
+        },
+        "birthday": 52,
+        "gender": "Man",
+        "address": {
+          "street": "Van alkemadehof",
+          "street_number": 34,
+          "postal_code": "3031PB",
+          "city": "Rotterdam",
+          "country": "Netherlands"
+        }
+      }
+    },
+    "address": "Van alkemadehof 34 3031PB",
+    "durations": {
+      "distance": {
+        "text": "0.7 km",
+        "value": 674
+      },
+      "duration": {
+        "text": "3 mins",
+        "value": 170
+      },
+      "duration_in_traffic": {
+        "text": "3 mins",
+        "value": 154
+      },
+      "status": "OK"
+    },
+    "departure_time": 1526803200
+  }
+]
