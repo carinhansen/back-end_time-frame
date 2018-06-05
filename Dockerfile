@@ -1,4 +1,4 @@
-FROM node:9-alpine
+FROM node:10-alpine
 ADD . /code
 WORKDIR /code
 RUN npm install
