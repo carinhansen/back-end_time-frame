@@ -36,11 +36,11 @@
       },
       "duration": {
         "text": "9 mins",
-        "value": 560
+        "value": 562
       },
       "duration_in_traffic": {
-        "text": "9 mins",
-        "value": 532
+        "text": "10 mins",
+        "value": 612
       },
       "status": "OK"
     },
@@ -83,11 +83,11 @@
       },
       "duration": {
         "text": "1 min",
-        "value": 41
+        "value": 52
       },
       "duration_in_traffic": {
         "text": "1 min",
-        "value": 41
+        "value": 52
       },
       "status": "OK"
     },
@@ -130,11 +130,11 @@
       },
       "duration": {
         "text": "1 min",
-        "value": 57
+        "value": 56
       },
       "duration_in_traffic": {
         "text": "1 min",
-        "value": 56
+        "value": 55
       },
       "status": "OK"
     },
@@ -177,11 +177,11 @@
       },
       "duration": {
         "text": "4 mins",
-        "value": 233
+        "value": 243
       },
       "duration_in_traffic": {
         "text": "4 mins",
-        "value": 244
+        "value": 256
       },
       "status": "OK"
     },
@@ -224,11 +224,11 @@
       },
       "duration": {
         "text": "3 mins",
-        "value": 170
+        "value": 163
       },
       "duration_in_traffic": {
         "text": "3 mins",
-        "value": 154
+        "value": 196
       },
       "status": "OK"
     },
