@@ -39,8 +39,8 @@
         "value": 562
       },
       "duration_in_traffic": {
-        "text": "10 mins",
-        "value": 612
+        "text": "9 mins",
+        "value": 510
       },
       "status": "OK"
     },
@@ -181,7 +181,7 @@
       },
       "duration_in_traffic": {
         "text": "4 mins",
-        "value": 256
+        "value": 228
       },
       "status": "OK"
     },
@@ -227,8 +227,8 @@
         "value": 163
       },
       "duration_in_traffic": {
-        "text": "3 mins",
-        "value": 196
+        "text": "2 mins",
+        "value": 140
       },
       "status": "OK"
     },
