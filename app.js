@@ -55,7 +55,16 @@ app.get('/generate/:deliveryid', (req, res) => {
           }
         });
 
-        return res.send(JSON.parse(fs.readFileSync('delivery_' + delivery.id + '.json', 'utf8')));
+        let result = fs.readFile('delivery_' + delivery.id + '.json', 'utf8', (err, data) => {
+          if(err){
+            console.error(err); 
+            return 
+          }
+
+          return res.json(JSON.parse(data));
+
+        } ); 
+        
       })
       .catch((error) => {
 
