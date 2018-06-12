@@ -2,7 +2,7 @@
   {
     "package": {
       "id": 1,
-      "delivery_delay": 33,
+      "delivery_delay": 1762,
       "weight": 5,
       "fragile": true,
       "dimensions": {
@@ -39,8 +39,8 @@
         "value": 562
       },
       "duration_in_traffic": {
-        "text": "9 mins",
-        "value": 523
+        "text": "8 mins",
+        "value": 463
       },
       "status": "OK"
     },
@@ -49,7 +49,7 @@
   {
     "package": {
       "id": 2,
-      "delivery_delay": 18,
+      "delivery_delay": 1708,
       "weight": 12,
       "fragile": false,
       "dimensions": {
@@ -96,7 +96,7 @@
   {
     "package": {
       "id": 3,
-      "delivery_delay": 141,
+      "delivery_delay": 1902,
       "weight": 30,
       "fragile": true,
       "dimensions": {
@@ -143,7 +143,7 @@
   {
     "package": {
       "id": 4,
-      "delivery_delay": 521,
+      "delivery_delay": 1872,
       "weight": 65,
       "fragile": false,
       "dimensions": {
@@ -181,54 +181,7 @@
       },
       "duration_in_traffic": {
         "text": "4 mins",
-        "value": 235
-      },
-      "status": "OK"
-    },
-    "departure_time": 1526803200
-  },
-  {
-    "package": {
-      "id": 5,
-      "delivery_delay": 113,
-      "weight": 26,
-      "fragile": true,
-      "dimensions": {
-        "height": 126,
-        "width": 11,
-        "depth": 29
-      },
-      "customer": {
-        "id": 54,
-        "name": {
-          "first": "Vincent",
-          "insertion": "het",
-          "last": "Hendriks"
-        },
-        "birthday": 52,
-        "gender": "Man",
-        "address": {
-          "street": "Van alkemadehof",
-          "street_number": 34,
-          "postal_code": "3031PB",
-          "city": "Rotterdam",
-          "country": "Netherlands"
-        }
-      }
-    },
-    "address": "Van alkemadehof 34 3031PB",
-    "durations": {
-      "distance": {
-        "text": "0.7 km",
-        "value": 674
-      },
-      "duration": {
-        "text": "3 mins",
-        "value": 163
-      },
-      "duration_in_traffic": {
-        "text": "2 mins",
-        "value": 144
+        "value": 234
       },
       "status": "OK"
     },

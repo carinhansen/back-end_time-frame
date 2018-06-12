@@ -4,6 +4,7 @@ const app = express();
 const fetch = require("node-fetch");
 const data = require("./MOCK_DATA.json");
 const fs = require('fs');
+const synaptic = require('synaptic');
 
 app.get('/generate/:deliveryid', (req, res) => {
   
@@ -37,14 +38,18 @@ app.get('/generate/:deliveryid', (req, res) => {
         let durations = [];
 
         for (let i = 0; i < response.rows.length; i++) {
-          durations.push(
-            {
-              package: delivery.packages[i],
-              address: destinations[i],
-              durations: response.rows[i].elements[i],
-              departure_time: delivery.departure_time,
-            }
-          );
+          if (delivery.packages[i]) {
+            delivery.packages[i].delivery_delay = getDelayTime(delivery.packages[i]);
+            const package_with_delay = delivery.packages[i];
+            durations.push(
+              {
+                package: package_with_delay,
+                address: destinations[i],
+                durations: response.rows[i].elements[i],
+                departure_time: delivery.departure_time,
+              }
+            );
+          }
         }
 
         durations.pop();
@@ -80,9 +85,6 @@ app.get('/generate/:deliveryid', (req, res) => {
 
 
 app.get('/deliveries/:deliveryid/packages/:packageid', (req, res) => {
-  let departureTime;
-  let origins;
-  let destinations;
 
   console.log(req.params);
 
@@ -132,6 +134,68 @@ app.get('/deliveries/:deliveryid/packages/:packageid', (req, res) => {
 
 });
 
-app.listen(8000, () => console.log('Example app listening on port 8000!'))
+function getDelayTime(package) {
 
+  const network = new synaptic.Architect.Perceptron(5, 3, 1);
+  const trainer = new synaptic.Trainer(network);
 
+  // Training
+  const importData = new Promise(async (resolve, reject) => {
+    console.log('getDelayTime', 'Importing data...');
+    try {
+      const request = await fetch('training_data/training_data.json');
+      const data = await request.json();
+      resolve(data);
+    } catch (err) {
+      reject(err);
+    }
+  });
+
+  const formatData = new Promise(async (resolve, reject) => {
+    const data = await importData;
+    console.log('getDelayTime', 'Formatting data...');
+
+    const mappedData = data.deliveries[0].packages.map(package => {
+      const fragile = package.fragile ? 1 : 0;
+      return {
+        input: [
+          // Weight
+          package.weight / 68,
+          // Width
+          package.dimensions.width / 274,
+          // Height
+          package.dimensions.height / 274,
+          // Depth
+          package.dimensions.depth / 274,
+          // Fragile
+          fragile,
+        ],
+        output: [package.delivery_delay / 3600]
+      }
+    });
+
+    resolve(mappedData);
+  });
+
+  const train = async (trainer) => {
+    const settings = {
+      rate: 0.3,
+      iterations: 1000,
+      error: 0.005,
+      shuffle: true,
+      log: 100,
+      cost: synaptic.Trainer.cost.CROSS_ENTROPY,
+    }
+    const data = await formatData;
+    console.log('getDelayTime, Training using ', data);
+    trainer.train(data, settings);
+  }
+
+  train(trainer);
+
+  const output = network.activate([package.weight / 68, package.dimensions.width / 274, package.dimensions.height / 274, package.dimensions.depth / 274, package.fragile]);
+
+  return Math.floor(output[0] * 3600);
+}
+
+app.listen(8000, () => console.log('Timeframe Back-end listening on port 8000!'))
