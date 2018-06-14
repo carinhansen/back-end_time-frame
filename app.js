@@ -6,6 +6,13 @@ const data = require("./MOCK_DATA.json");
 const fs = require('fs');
 const synaptic = require('synaptic');
 
+app.use(function (req, res, next) {
+  res.append('Access-Control-Allow-Origin', '*');
+  res.header('Content-Type', 'application/json');
+  res.header('Accept', 'application/json');
+  next();
+});
+
 app.get('/generate/:deliveryid', (req, res) => {
   
   data.deliveries.forEach(delivery => {
